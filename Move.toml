@@ -1,0 +1,17 @@
+[package]
+name = 'ditto-interface'
+version = '1.0.0'
+
+[dependencies.AptosFramework]
+git = 'https://github.com/aptos-labs/aptos-core.git'
+rev = 'main'
+subdir = 'aptos-move/framework/aptos-framework'
+
+[dependencies]
+ditto-staking = { local = "./ditto-staking-interface" }
+
+[addresses]
+aptos_std = "0x1"
+aptos_framework = "0x1"
+core_resources = "0xA550C18"
+ditto_interface = "0x95a81e1d4db7829583cd27280e8f08ced8bd2d5c411a6c74aea84900b6c270b3"
