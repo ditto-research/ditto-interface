@@ -3,9 +3,9 @@ name = "ditto-staking"
 version = "0.0.0"
 
 [dependencies.AptosFramework]
-git = 'https://github.com/aptos-labs/aptos-core.git'
-rev = 'main'
-subdir = 'aptos-move/framework/aptos-framework'
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "985f19d40457a5f09f2d741b1feca6bf7ba1f8a6"
+subdir = "aptos-move/framework/aptos-framework"
 
 [addresses]
 ditto_staking = "0x4d87417a2fb3248887d820f7737d9c4aeeb9591c5de91d08f7f490550e733894"

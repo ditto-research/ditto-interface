@@ -3,9 +3,9 @@ name = 'ditto-interface'
 version = '1.0.0'
 
 [dependencies.AptosFramework]
-git = 'https://github.com/aptos-labs/aptos-core.git'
-rev = 'main'
-subdir = 'aptos-move/framework/aptos-framework'
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "985f19d40457a5f09f2d741b1feca6bf7ba1f8a6"
+subdir = "aptos-move/framework/aptos-framework"
 
 [dependencies]
 ditto-staking = { local = "./ditto-staking-interface" }
@@ -14,4 +14,4 @@ ditto-staking = { local = "./ditto-staking-interface" }
 aptos_std = "0x1"
 aptos_framework = "0x1"
 core_resources = "0xA550C18"
-ditto_interface = "0x95a81e1d4db7829583cd27280e8f08ced8bd2d5c411a6c74aea84900b6c270b3"
+ditto_interface = "0x498ec0b8914eb9fdecf0a037a75049a6ddfc5a82d1c39ec2315b0716c0d40a98"
