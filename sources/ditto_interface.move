@@ -1,11 +1,11 @@
 module ditto_interface::ditto_interface {
     use std::signer;
 
-    use aptos_framework::aptos_coin::AptosCoin;
-    use aptos_framework::coin;
-
     use ditto_staking::ditto_staking;
     use ditto_staking::staked_coin;
+
+    use aptos_framework::aptos_coin::AptosCoin;
+    use aptos_framework::coin;
 
     public entry fun invoke_ditto_stake_aptos(user: &signer, amount: u64) {
         ditto_staking::stake_aptos(user, amount);

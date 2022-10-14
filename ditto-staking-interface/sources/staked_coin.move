@@ -1,8 +1,7 @@
 module ditto_staking::staked_coin {
     friend ditto_staking::ditto_staking;
 
-    struct StakedAptos{}
+    struct StakedAptos {}
 
-    public entry fun register(_account: &signer) {
-    }
+    public entry fun register(_account: &signer) {}
 }
