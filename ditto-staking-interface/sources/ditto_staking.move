@@ -49,14 +49,20 @@ module ditto_staking::ditto_staking {
 
     public entry fun stake_aptos(_user: &signer, _amount: u64) {}
 
+    public entry fun stake_aptos_with_id(_user: &signer, _amount: u64, _id: u8) {}
+
     public entry fun instant_unstake(_user: &signer, _amount: u64) {}
 
     public entry fun delayed_unstake(_user: &signer, _amount: u64) {}
 
     public entry fun claim_aptos(_user: &signer) {}
 
-
     public fun exchange_aptos(aptos: coin::Coin<AptosCoin>): coin::Coin<StakedAptos> {
+        coin::destroy_zero(aptos);
+        coin::zero<StakedAptos>()
+    }
+
+    public fun exchange_aptos_with_id(aptos: coin::Coin<AptosCoin>, _id: u8): coin::Coin<StakedAptos> {
         coin::destroy_zero(aptos);
         coin::zero<StakedAptos>()
     }
