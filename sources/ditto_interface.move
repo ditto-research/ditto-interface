@@ -31,7 +31,7 @@ module ditto_interface::ditto_interface {
         };
 
         let coins = coin::withdraw<AptosCoin>(user, amount);
-        let staked_coins = ditto_staking::exchange_aptos(coins);
+        let staked_coins = ditto_staking::exchange_aptos(coins, user);
         coin::deposit(user_addr, staked_coins);
     }
 
@@ -39,14 +39,14 @@ module ditto_interface::ditto_interface {
         let user_addr = signer::address_of(user);
 
         let staked_coin = coin::withdraw<staked_coin::StakedAptos>(user, amount);
-        let unstaked_aptos = ditto_staking::exchange_staptos(staked_coin);
+        let unstaked_aptos = ditto_staking::exchange_staptos(staked_coin, user);
         coin::deposit(user_addr, unstaked_aptos);
     }
 
     public entry fun invoke_ditto_delayed_exchange_staptos(user: &signer, amount: u64) {
         let staked_coin = coin::withdraw<staked_coin::StakedAptos>(user, amount);
         let user_addr = signer::address_of(user);
-        ditto_staking::delayed_exchange_staptos(staked_coin, user_addr);
+        ditto_staking::delayed_exchange_staptos(staked_coin, user);
     }
 
     public entry fun invoke_ditto_claim_queued_aptos(user: &signer) {

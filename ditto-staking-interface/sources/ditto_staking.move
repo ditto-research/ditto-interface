@@ -57,22 +57,22 @@ module ditto_staking::ditto_staking {
 
     public entry fun claim_aptos(_user: &signer) {}
 
-    public fun exchange_aptos(aptos: coin::Coin<AptosCoin>): coin::Coin<StakedAptos> {
+    public fun exchange_aptos(aptos: coin::Coin<AptosCoin>, _user: &signer): coin::Coin<StakedAptos> {
         coin::destroy_zero(aptos);
         coin::zero<StakedAptos>()
     }
 
-    public fun exchange_aptos_with_id(aptos: coin::Coin<AptosCoin>, _id: u8): coin::Coin<StakedAptos> {
+    public fun exchange_aptos_with_id(aptos: coin::Coin<AptosCoin>, _user: &signer, _id: u8): coin::Coin<StakedAptos> {
         coin::destroy_zero(aptos);
         coin::zero<StakedAptos>()
     }
 
-    public fun exchange_staptos(staptos: coin::Coin<StakedAptos>): coin::Coin<AptosCoin> {
+    public fun exchange_staptos(staptos: coin::Coin<StakedAptos>, _user: &signer): coin::Coin<AptosCoin> {
         coin::destroy_zero(staptos);
         coin::zero<AptosCoin>()
     }
 
-    public fun delayed_exchange_staptos(staptos: coin::Coin<StakedAptos>, _user_addr: address) {
+    public fun delayed_exchange_staptos(staptos: coin::Coin<StakedAptos>, _user: &signer) {
         coin::destroy_zero(staptos);
     }
 
