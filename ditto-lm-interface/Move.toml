@@ -1,5 +1,5 @@
 [package]
-name = "ditto-staking"
+name = "liquidity-mining"
 version = "0.0.0"
 
 [dependencies.AptosFramework]
@@ -8,4 +8,4 @@ rev = "985f19d40457a5f09f2d741b1feca6bf7ba1f8a6"
 subdir = "aptos-move/framework/aptos-framework"
 
 [addresses]
-ditto_staking = "0xd11107bdf0d6d7040c6c0bfbdecb6545191fdf13e8d8d259952f53e1713f61b5"
+liquidity_mining = "0xa8b72a2be72784117c8878aa6387433c15d6b9b23acf3199f30fd40aff3b1e28"

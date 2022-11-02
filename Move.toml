@@ -9,6 +9,7 @@ subdir = "aptos-move/framework/aptos-framework"
 
 [dependencies]
 ditto-staking = { local = "./ditto-staking-interface" }
+liquidity-mining = { local = "./ditto-lm-interface" }
 
 [addresses]
 aptos_std = "0x1"

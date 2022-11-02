@@ -3,6 +3,7 @@ module ditto_interface::ditto_interface {
 
     use ditto_staking::ditto_staking;
     use ditto_staking::staked_coin;
+    use liquidity_mining::liquidity_mining;
 
     use aptos_framework::aptos_coin::AptosCoin;
     use aptos_framework::coin;
@@ -51,5 +52,17 @@ module ditto_interface::ditto_interface {
 
     public entry fun invoke_ditto_claim_queued_aptos(user: &signer) {
         coin::deposit(signer::address_of(user), ditto_staking::claim_queued_aptos(user));
+    }
+
+    public entry fun invoke_liquidity_mining_stake<CoinType>(user: &signer, amount: u64) {
+        liquidity_mining::stake<CoinType>(user, amount);
+    }
+
+    public entry fun invoke_liquidity_mining_unstake<CoinType>(user: &signer, amount: u64) {
+        liquidity_mining::unstake<CoinType>(user, amount);
+    }
+
+    public entry fun invoke_liquidity_mining_redeem<StakedCoin, RewardCoin>(user: &signer) {
+        liquidity_mining::redeem<StakedCoin, RewardCoin>(user);
     }
 }
